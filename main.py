@@ -16,6 +16,14 @@ class MainPageHandler(webapp2.RequestHandler):
         template = jinja_env.get_template('templates/main.html')
         self.response.write(template.render())
 
+
+class SearchHandler(webapp2.RequestHandler):
+        def post(self):
+            base_url = 'http://ghibli.herokuapp.com/films'
+            template = jinja_env.get_template('templates/results.html')
+            
+
+
 # class FilmDisplayHandler(webapp2.RequestHandler):
 #     def post(self):
 
@@ -48,6 +56,7 @@ class MainPageHandler(webapp2.RequestHandler):
 # the app configuration section
 app = webapp2.WSGIApplication([
     ('/', MainPageHandler),
+    ('/search', SearchHandler),
     # ('/films', FilmDisplayHandler),
     # ('/people', PeopleDisplayHandler),
     # ('/location', LocationsDisplayHandler),
