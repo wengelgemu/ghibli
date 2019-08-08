@@ -16,9 +16,21 @@ class MainPageHandler(webapp2.RequestHandler):
         template = jinja_env.get_template('templates/main.html')
         self.response.write(template.render())
 
-class GhibliDisplayHandler(webapp2.RequestHandler):
-    def post(self):
+# class FilmDisplayHandler(webapp2.RequestHandler):
+#     def post(self):
 
+# class PeopleDisplayHandler(webapp2.RequestHandler):
+#     def post(self):
+
+# class LocationsDisplayHandler(webapp2.RequestHandler):
+#     def post(self):
+
+# class SpeciesDisplayHandler(webapp2.RequestHandler):
+#     def post(self):
+
+# class VehiclesDisplayHandler(webapp2.RequestHandler):
+#     def post(self):
+                
 
 # class RecipieDisplayHandler(webapp2.RequestHandler):
 #     def post(self):
@@ -36,5 +48,9 @@ class GhibliDisplayHandler(webapp2.RequestHandler):
 # the app configuration section
 app = webapp2.WSGIApplication([
     ('/', MainPageHandler),
-    ('/ghibli', GhibliDisplayHandler)
+    # ('/films', FilmDisplayHandler),
+    # ('/people', PeopleDisplayHandler),
+    # ('/location', LocationsDisplayHandler),
+    # ('/species', SpeciesDisplayHandler),
+    # ('/vehicles', VehiclesDisplayHandler)
 ], debug=True)
