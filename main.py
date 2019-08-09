@@ -18,10 +18,12 @@ class MainPageHandler(webapp2.RequestHandler):
 
 
 class SearchHandler(webapp2.RequestHandler):
-        def post(self):
-            base_url = 'http://ghibli.herokuapp.com/films'
-            template = jinja_env.get_template('templates/results.html')
-            
+    def post(self):
+        filter = self.request.get('filter')
+        base_url = 'https://ghibliapi.herokuapp.com/{}'.format(filter)
+        response = json.loads(urlfetch.fetch(base_url).content)
+        template = jinja_env.get_template('templates/results.html')
+        self.response.write(template.render({ 'response': response }))      
 
 
 # class FilmDisplayHandler(webapp2.RequestHandler):
