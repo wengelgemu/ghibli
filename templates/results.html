@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+    a { color: #AD6412; }
+    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/ghibli.css">
 </head>
 <body>
     {% for result in response %}
-    <div class="result">{{ result }}</div>
-  {% endfor %}
+        <div class="result">
+        {% for key, value in result.items() %}
+
+        <div class="pairs">
+            <section class="key">{{ key }}: </section>&nbsp;
+            {% if value is string and value.startswith('http') %}
+                <a href="{{ value }}">{{value}}</a>
+            {% else %}
+                {{ value }}
+            {% endif %}
+        </div> 
+
+        {% endfor %}
+        </div>
+    {% endfor %}
+    <div class="navbar">
+        <p>THE STUDIO GHIBLI COLLECTION</p>
+        <!-- <a href="#contact">Contact</a> -->
+    </div>
 </body>
 </html>

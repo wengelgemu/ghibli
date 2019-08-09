@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
   <h1>The Studio Ghibli Experience</h1>
   <section>
     <h2>Search</h2>
+    <div>
     <form method="post" action="/search">
       Filter:
       <select name= "filter">
@@ -19,9 +21,13 @@
         <option value="species">Species</option>
         <option value="vehicles">Vehicle</option>
       </select>
-      <div><input name="query"></div>
-      <div><input type="submit"></div>
+      <input type="submit"></div>
+
     </form>
   </section>
+  <div class="navbar">
+        <p>THE STUDIO GHIBLI COLLECTION</p>
+        <!-- <a href="#contact">Contact</a> -->
+    </div>
 </body>
 </html>
